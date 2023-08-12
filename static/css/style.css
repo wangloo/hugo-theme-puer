@@ -1,3 +1,17 @@
+@font-face {
+    font-family: "LXGWWenKai-Regular";
+    src: "/fonts/LXGWWenKai-Regular.ttf" format("truetype");
+}
+
+
+h1,h2,h3,h4,h5,h6,p,li,a {
+    font-family: 'PT Serif','LXGW WenKai Lite','Noto Serif SC', serif;
+}
+
+code {
+    font-family: jetbrains mono,Menlo,Consolas,dejavu sans mono,bitstream vera sans mono,lucida console,Monaco,droid sans mono,monospace !important;
+}
+
 #fastSearch {
   display: inline-block;
   width: 90%;
