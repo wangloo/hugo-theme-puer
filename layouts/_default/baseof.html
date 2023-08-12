@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
     {{- partial "head.html" . -}}
     <title>
         {{ block "title" . }}
@@ -11,13 +12,16 @@
 </head>
 
 <body>
-    {{- partial "header.html" . -}}
-    <main class="container">
-        {{- block "main" . }} 
-        {{- end }}
-    </main>
-    {{- partial "footer.html" . -}} 
-    {{- partial "script.html" . -}}
+    <div id="app">
+        {{- partial "sidebar.html" . -}}
+        <main class="container">
+            {{- block "main" . }}
+            {{- end }}
+        </main>
+        {{- partial "footer.html" . -}}
+        {{- partial "script.html" . -}}
+    </div>
+
 </body>
 
 </html>
