@@ -1,24 +1,20 @@
 <div id="sideContainer" class="side-container">
 
     <div class="nav-link-list">
-
-        
-        {{/*  TODO: back button  */}}
+        {{/* TODO: back button */}}
         <div class="a-block nav-link-item " href="">
             BACK
         </div>
-        
 
-        {{/*  TODO: tags,articles...  */}}
-        <div class="a-block nav-link-item " href="">
-            TAGS
+
+        {{ range .Site.Menus.main }}
+        <div class="a-block nav-link-item">
+            <a href="{{ .URL }}">
+                {{ .Name }}
+            </a>
         </div>
+        {{ end }}
 
-
-        {{/*  TODO: tags,articles...  */}}
-        <div class="a-block nav-link-item " href="">
-            ...
-        </div>
 
         <div class="a-block nav-link-item " href="">
             <div id="fastSearch">
@@ -29,7 +25,7 @@
         </div>
 
     </div>
-    
+
 </div>
 
 <script src="/js/fuse.js"></script> <!-- download and copy over fuse.min.js file from fusejs.io -->

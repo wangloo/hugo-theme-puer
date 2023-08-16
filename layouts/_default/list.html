@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+
+<dev>
+    <h1>{{ .Parent.Title }} / {{ .Title }}</h1>
+</dev>
+
+
+{{- range .Paginator.Pages -}}
+<a href="{{ .RelPermalink }}" class="a-block">
+    <div class="post-item">
+        {{.Title}}
+    </div>
+</a>
+{{- end -}}
+
+{{ end }}

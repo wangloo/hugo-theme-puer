@@ -3,15 +3,15 @@
 {{ end }}
 
 {{ define "main" }}
-    <header>
+    <dev>
         <h1>{{ .Title }}</h1>
-    </header>
+    </dev>
 
     {{ range .Pages }}
-    <div>
-        <a href="{{ .RelPermalink }}">
-            {{.Title}}
-        </a>
-    </div>
+        <div>
+            <a href="{{ .RelPermalink }}">
+                {{.Title}}
+            </a>
+        </div>
     {{ end }}
 {{ end }}
