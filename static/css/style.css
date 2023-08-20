@@ -108,3 +108,17 @@ code {
       transition: all 0.2s linear;
     }
   }
+
+
+blockquote {
+    border-left: 0.3rem solid gray;
+    background-color: rgba(149, 149, 149, 0.2);
+    padding: 3px 10px;
+    
+    /* 禁止默认的缩进 */
+    margin-inline-start: 0; 
+    margin-inline-end: 0;
+}
+
+blockquote p {
+}
