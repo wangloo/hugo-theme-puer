@@ -24,6 +24,10 @@
             </div>
         </div>
 
+        <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+            {{- partial "toc.html" . -}}
+        </div>
+
     </div>
 
 </div>

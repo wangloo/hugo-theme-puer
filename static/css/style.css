@@ -79,11 +79,10 @@ code {
 }
 
 .container {
-    padding-left: 25%;
-    width: 75%;
+    padding-left: 28%; /* 比sidebar的width稍宽, 因为考虑到滑块 */
+    /* width: 75%; */  /* 有了white-space就不需要 */
     min-height: 100vh;
     white-space: normal;
-
 }
 
 .side-container {
@@ -99,6 +98,7 @@ code {
 }
 
 .nav-link-list {
+    overflow: auto;
     flex-grow: 1;
     .nav-link-item {
       margin-bottom: 10px;
@@ -109,6 +109,9 @@ code {
     }
   }
 
+pre {
+    overflow-x:auto; /* 代码超出长度显示滑块 */
+}
 
 blockquote {
     border-left: 0.3rem solid gray;
