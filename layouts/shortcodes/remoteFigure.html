@@ -3,13 +3,25 @@
     https://github.com/zwbetz-gh/cupper-hugo-theme/blob/master/layouts/shortcodes/figureCupper.html
     Under MIT License
 -->
-{{ $img := .Get "img" }}
-{{ $caption := .Get "caption" }}
-{{ $command := .Get "command" }}
-{{ $options := .Get "options" }}
-{{ $align := .Get "align" }}
 
-{{ $original := resources.GetRemote ($img) }}
+{{/* 
+Usage:
+    {{< remoteFigure 
+    link="https://gitee.com/wangloocn/image-bed/raw/master/20230909235119.png" 
+    command="Resize"
+    options="600x200"
+    align="left"
+    caption="affinity value">}}
+*/}}
+
+{{/* !!所有的参数中, link和command是必须的 */}}
+{{ $link := .Get "link" }}        {{/* image remote addr */}}
+{{ $caption := .Get "caption" }}  {{/* 标注, 字符串形式 */}}
+{{ $command := .Get "command" }}  {{/* Fit/Fill/Resize/Original */}}
+{{ $options := .Get "options" }}  {{/* 配合command的参数, 例如"600x400" */}}
+{{ $align := .Get "align" }}      {{/* left/right/center, 同时控制图片和caption */}}
+
+{{ $original := resources.GetRemote ($link) }}
 {{ $new := "" }}
 
 {{ if eq $command "Fit" }}
