@@ -6,7 +6,7 @@
     <div class="tags">
         {{ range .Data.Terms }}
         <div class="tag">
-          <a href="{{.Page.Permalink}}" class="btn btn-outline-secondary position-relative rounded-pill">
+          <a href="{{.Page.Permalink}}">
             {{.Page.Title}}
             <span class="badge">({{.Count}})</span>
           </a>
