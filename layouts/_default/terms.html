@@ -3,9 +3,9 @@
     <h1>{{ .Title }}</h1>
 </dev>
 
-    <div class="tags">
+    <div>
         {{ range .Data.Terms }}
-        <div class="tag">
+        <div>
           <a href="{{.Page.Permalink}}">
             {{.Page.Title}}
             <span class="badge">({{.Count}})</span>
