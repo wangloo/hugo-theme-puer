@@ -1,0 +1,30 @@
+{{/*  TODO: 这个页面的优先级会高于 section.html, 其实这个展示的部分应当属于
+      category taxonomy的部分，但是因为秋招简历写了这个地址，
+      所以就暂时将section page 展示 category 的布局吧，等到招聘结束再修改  */}}
+{{ define "title" }}
+    {{.Title}}
+{{ end }}
+
+{{ define "main" }}
+    <dev>
+        <h1>{{ .Title }}</h1>
+    </dev>
+
+    {{/*  循环所有的 category  */}}
+    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+        {{/*  展示每个 category 的名字  */}}
+        <div> [ {{ $name }} ] </div>
+
+        {{/*  展示每个 category 下的所有页面标题  */}}
+        {{ range $taxonomy.Pages }}
+            <div>
+                <a href="{{ .Permalink}}" class="a-block"> 
+                    {{ .Title }} 
+               </a> 
+            </div>
+
+        {{ end }}
+        <br>
+    {{ end }}
+    
+{{ end }}
