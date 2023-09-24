@@ -13,7 +13,9 @@
     {{/*  循环所有的 category  */}}
     {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
         {{/*  展示每个 category 的名字  */}}
-        <div> [ {{ $name }} ] </div>
+        {{/*  大小写敏感 $name => .Page.Title 
+              https://gohugo.io/content-management/taxonomies/#:~:text=The%20configuration%20option%20preserveTaxonomyNames%20was%20removed%20in%20Hugo%200.55. */}}
+        <div> [ {{ .Page.Title }} ] </div>
 
         {{/*  展示每个 category 下的所有页面标题  */}}
         {{ range $taxonomy.Pages }}
@@ -27,4 +29,13 @@
         <br>
     {{ end }}
     
+    {{/*  最后放所有没有设置 categories 的页面 */}}
+    <div>[ # ]</div>
+    {{ range .Pages }}
+        {{ if not (.GetTerms "categories") }}
+        <div>
+            <a href="{{ .Permalink}}" class="a-block"> {{ .Title }} </a> 
+        </div>
+        {{ end }}
+    {{ end }}
 {{ end }}
