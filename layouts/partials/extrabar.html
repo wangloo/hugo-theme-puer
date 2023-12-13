@@ -1,0 +1,22 @@
+
+
+<div id="extraContainer" class="extra-container">
+
+        <div class="a-block nav-link-item " href="">
+            <div id="fastSearch">
+                <input id="searchInput" placeholder="Press '/' to focus on me">
+                <ul id="searchResults">
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+            {{- partial "toc.html" . -}}
+        </div>
+
+
+
+</div>
+<script src="/js/fuse.js"></script> <!-- download and copy over fuse.min.js file from fusejs.io -->
+<script src="/js/fastsearch.js"></script>
