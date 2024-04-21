@@ -4,3 +4,10 @@
 {{- if not .Lastmod.IsZero -}}
     <p style="color:#777;">创建于: {{ .Date.Format "2006-01-02T15:04:05"}},   Lastmod: {{ .Lastmod.Format "2006-01-02T15:04:05"}}</p>
 {{- end -}}
+
+<!-- copy code -->
+{{ if (findRE "<code" .Content 1) }}
+    {{/*  不再使用/js/clipboard.js： 复制多余空行、启用行号时会复制上行号  */}}
+    {{/*  <script src="{{"/js/clipboard.js" | relURL}}"></script>  */}}
+    <script src="{{"/js/copy-to-clipboard.js" | relURL}}"></script>
+{{ end }}
