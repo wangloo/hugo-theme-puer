@@ -283,3 +283,12 @@ blockquote {
 
 blockquote p {
 }
+
+/***********************
+ ***TOC*****************
+ ***********************/
+ .toc {
+  /* max-width: 260px; */
+  /* max-height: 80vh; */
+  overflow: auto;
+ }
